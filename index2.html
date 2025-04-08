@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КРИПТОГРАФИЙН ВЕБ САЙТ</title>
+    
+    <!-- Include Mongolian font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Global styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Noto Sans Mongolian', sans-serif;
+        font-weight: bold;
+      }
+
+      body {
+        color: rgba(14, 183, 240, 0.884);
+        margin: 0;
+        background-image: url('/zurag/lolz3.webp'); /* Background image */
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* Background Overlay */
+      .hero {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background: url('img/bg.png') no-repeat center center/cover;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        z-index: 1;
+      }
+
+      /* Navigation */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 100px;
+        background: #0b0a10;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 10;
+      }
+
+      .logo {
+        max-height: 90px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav ul li {
+        padding: 10px 20px;
+      }
+
+      nav ul li a {
+        color: #f4f4f8;
+        text-decoration: none;
+        font-weight: bold;
+        position: relative;
+      }
+
+      nav ul li a:hover {
+        color: #fd4766;
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: #fd4766;
+        transition: 0.3s;
+        bottom: -5px;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      /* Content */
+      .content {
+        position: absolute;
+        top: 35%;
+        left: 8%;
+        color: white;
+        z-index: 10;
+      }
+
+      .title {
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        background: linear-gradient(120deg, #1c99fe 20.69%, #7644ff 50.19%, #fd4766 79.69%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .content h1 {
+        font-size: 50px;
+        font-weight: 900;
+        line-height: 90px;
+      }
+
+      .content h1 span {
+        color: #fd4766;
+      }
+
+      .content p {
+        width: 55%;
+        margin-top: 25px;
+        margin-bottom: 30px;
+        text-align: justify;
+        font-size: 18px;
+      }
+
+      /* Button */
+      .btn {
+        color: #fff;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 16px 40px;
+        border-radius: 50px;
+        display: inline-block;
+        font-weight: 500;
+        transition: all 0.4s ease-in-out;
+        background: #fd4766;
+        border: 2px solid #fd4766;
+      }
+
+      .btn:hover {
+        background: transparent;
+        border-color: #fd4766;
+        color: #fd4766;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="hero">
+      <!-- Navigation -->
+      <nav>
+        <img src="zurag/qwer.png" class="logo" alt="Лого">
+        <span class="title">Үндэсний Батлан хамгаалахын их сургууль</span>
+        <ul>
+          <li><a href="index.html">Нүүр</a></li>
+          <li><a href="turshilt3.html">Гарын авлага</a></li>
+          <li><a href="contact.html">Холбоо барих</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <div class="content">
+        <h1><span>КРИПТОГРАФИЙН ВЕБ САЙТ</span></h1>
+        <p>
+          Криптографи нь мэдээллийг хамгаалах, нууцлах, болон зөвшөөрөлгүй хандалтаас урьдчилан сэргийлэх зорилгоор хэрэглэгддэг судалгаа, арга техникийг хэлнэ. Криптографи нь үүссэн цагаас хойш нууц бичиг шифрлэхээс эхлээд мэдээллийн аюулгүй байдлыг хангах хүртэл олон төрлийн хэрэглээ бий болж хөгжсөнөөр энэхүү веб сайт үүсэх үндэс болсон юм.
+        </p>
+        <a href="practice cipher.html" class="btn">Шифрлэлтийг эхлүүлэх</a>
+      </div>
+    </div>
+  </body>
+</html>

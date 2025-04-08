@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>КРИПТОГРАФИЙН ВЕБ САЙТ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Noto Sans Mongolian', sans-serif;
+      color: rgba(14, 183, 240, 0.884);
+      margin: 0;
+      background: #000;
+      overflow-x: hidden;
+      font-weight: bold;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 100px;
+      background: rgba(11, 10, 16, 0.7);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .logo {
+      max-height: 70px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      padding: 10px 20px;
+    }
+
+    nav ul li a {
+      color: #f3f3f7;
+      position: relative;
+      padding: 5px 0;
+    }
+
+    nav ul li a:hover {
+      color: #fd4766;
+    }
+
+    .title {
+      color: #0a0a0a;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      background: linear-gradient(120deg, #f2d512 20.69%, #f2d512 50.19%, #f2d512 79.69%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Slider Styles */
+    .slider {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 1s ease-in-out;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      min-width: 100vw;
+      height: 100vh;
+    }
+
+    .slide img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .nav-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 5;
+    }
+
+    .prev,
+    .next {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 15px;
+      cursor: pointer;
+      border: none;
+      font-size: 18px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <img src="./zurag/qwer.png" class="logo" alt="Лого" />
+    <span class="title">Үндэсний Батлан хамгаалахын их сургууль</span>
+    <ul>
+      <li><a href="index.html">Нүүр</a></li>
+      <li><a href="turshilt3.html">Гарын авлага</a></li>
+      <li><a href="contact.html">Холбоо барих</a></li>
+    </ul>
+  </nav>
+
+  <!-- Image Slider -->
+  <div class="slider">
+    <div class="slides">
+      <div class="slide"><img src="./zurag/zav1.png" alt="Image 1" /></div>
+      <div class="slide"><img src="./zurag/zav2.png" alt="Image 2" /></div>
+      <div class="slide"><img src="./zurag/zav3.png" alt="Image 3" /></div>
+      <div class="slide"><img src="./zurag/zav4.png" alt="Image 4" /></div>
+      <div class="slide"><img src="./zurag/zav5a.png" alt="Image 5" /></div>
+      <div class="slide"><img src="./zurag/zav6.png" alt="Image 6" /></div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const slidesContainer = document.querySelector('.slides');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+
+    function updateSlidePosition() {
+      slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlidePosition();
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateSlidePosition();
+    });
+  </script>
+
+</body>
+</html>

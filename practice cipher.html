@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <title>Криптографийн хэрэгслүүд</title>
+
+    <style>
+        /* Background Image */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/zurag/lolz3.webp') no-repeat center center/cover;
+            z-index: -2;
+        }
+
+        /* Page Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            overflow-y: scroll; /* Ensure scrollable */
+            height: 100vh;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Title Styling */
+        h1 {
+            color: #09bce7;
+            text-align: center;
+            font-size: 48px;
+            font-weight: bold;
+            margin-top: 30px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .ciphers_button {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #09bce7;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 2px solid #00BFFF;
+            transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+            cursor: pointer;
+        }
+
+        .ciphers_button:hover {
+            background-color: hsla(187, 94%, 53%, 0.253);
+            color: #000;
+            border-color: #0fa9f0;
+            transform: scale(1.05);
+        }
+
+        /* Customize the scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+            height: 12px; /* Height for horizontal scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #333; /* Color of the scroll track */
+            border-radius: 10px; /* Rounded corners for the track */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #f3f7f7; /* Color of the scroll thumb */
+            border-radius: 20px; /* Rounded corners for the thumb */
+            border: 3px solid #333; /* Border around the thumb */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f3f7f7; /* Color change on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title -->
+    <h1>Криптографийн хэрэгслүүд</h1>
+
+    <!-- Buttons Container -->
+    <div class="container" data-aos="fade-up">
+        <button class="ciphers_button" onclick="location.href='./views/adfgvx.html'">Adfgvx Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/adfgx.html'">Adfgx Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/ASCII.html'">ASCII Code</button>
+        <button class="ciphers_button" onclick="location.href='./views/atbash.html'">Atbash Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/baconian.html'">Baconian Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/Base64.html'">Base64 Code</button>
+        <button class="ciphers_button" onclick="location.href='./views/beaufort.html'">Beaufort Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/Binary.html'">Binary Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/Caesar.html'">Caesar Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/Columnar Transposition.html'">Columnar Transposition Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/enigma.html'">Enigma Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/Hill.html'">Hill Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/Morse.html'">Morse Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/polybius.html'">Polybius Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/vigenere.html'">Vigenere Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/Straddle Checkerboard Cipher.html'">Straddle Checkerboard Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/Vernam.html'">Vernam Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/Phone.html'">Phone Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/polyalphabeticCipher.html'">Polyalphabetic Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/porta.html'">Porta Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/railfence.html'">Railfence Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/reverse.html'">Reverse Cipher</button>
+        <button class="ciphers_button" onclick="location.href='./views/rot13.html'">ROT13 Cipher</button>
+    </div>
+
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+        });
+    </script>
+</body>
+</html>
