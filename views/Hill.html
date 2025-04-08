@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <title>HILL CIPHER</title>
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+</head>
+<body>
+
+  <!-- CIPHER NAME -->
+  <div class="title">
+    <h1 class="outsideScreen">HILL CIPHER</h1>
+  </div>
+  <button class="information" id="information">МЭДЭЭЛЭЛ</button><br><br><br>
+  <button class="instructions" id="instructions">ЗААВАР</button>
+  
+  <div id="myinformation" class="information_content">
+    <!-- агуулга -->
+    <div class="information-content">
+      <div><span class="close1">&times;</span></div>
+      <div class="information-body">
+        <p>1. Энэ нь Линей алгебр дээр үндэслэсэн полиографийн орлуулах шифр юм.
+          <br><br>2. Матриц болон матрицыг үржүүлэхийг ашиглан эх үсгийн текстийг шифрлэж өгдөг.
+          <br><br>3. Энэ алгоритмыг шинжлэхийн тулд тооны онол гэх математик логик шаардлагатай.
+          <br><br>4. Hill Cipher-ийн түлхүүр нь матриц байдаг.
+          <br><br>5. Түлхүүрийг 4 тоогоор оруулна. Эдгээр тоонууд нь түлхүүрийг (дээд мөр, доод мөр) бүрдүүлнэ.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div id="myinstructions" class="instructions_content">
+    <!-- агуулга -->
+    <div class="instructions-content">
+      <div class="instructions-header">
+        <span class="close2">&times;</span>
+      </div>
+      <div class="instructions-body">
+        <p>
+          <br>1. Оруулах хэсэгт шифрлэх текстээ оруулна уу
+          <br><br>2. Түлхүүрийг 4 тоогоор орлуулж, зайгаар тусгаарлан оруулна. 
+          <br><br> Жишээ: 3 4 19 11
+          <br><br>3. Шифрлэх хэсэг дээр товшиж текстээ шифрлээрэй.
+          <br><br>4. Шифрлэсэн текстийг тайлахын тулд шифрлэгдсэн текстийг "Оруулах" хэсэгт оруулж тайлах товчин дээр товшино уу
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var information = document.getElementById("myinformation");
+    var instructions = document.getElementById("myinstructions");
+
+    var informtion_button = document.getElementById("information");
+    var instructions_button = document.getElementById("instructions");
+
+    var span = document.getElementsByClassName("close1")[0];
+    var span1 = document.getElementsByClassName("close2")[0];
+
+    informtion_button.onclick = function() {
+      if (information.style.display === "block") {
+        information.style.display = "none";
+      } else {
+        information.style.display = "block";
+      }
+    }
+    
+    instructions_button.onclick = function() {
+      if (instructions.style.display === "block") {
+        instructions.style.display = "none";
+      } else {
+        instructions.style.display = "block";
+      }
+    }
+
+    span.onclick = function() {
+      information.style.display = "none";
+    }
+    span1.onclick = function() {
+      instructions.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == information) {
+        information.style.display = "none";
+      }
+    }
+    window.onclick = function(event) {
+      if (event.target == instructions) {
+        instructions.style.display = "none";
+      }
+    }
+  </script>
+
+  <!-- CONTROLS TO CIPHER AND DECIPHER MESSAGES -->
+  <div class="inOut">
+    <textarea name="input" rows="8" cols="80" id="inputMessage" placeholder="Оруулах"></textarea>
+    <span>
+      <button class="polyButton cipherMethod" id="cipherButtonPoly" onclick="cipherButtonFunction()">Шифрлэх</button>
+      <button class="polyButton decipherMethod" id="decipherButton" onclick="decipherButtonFunction()">Тайлах</button>
+      <br><br><br><br><br><br>
+      <div class="inOut">
+        <input type="text" id="enteredKey" placeholder="Түлхүүр оруулах">
+      </div>
+    </span>
+    <textarea name="result" rows="8" cols="80" id="result" placeholder="Гаргах"></textarea>
+  </div>
+
+  <script type="text/javascript" src="../js/Hill.js"></script>
+  <script type="text/javascript" src="../js/main.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <title>ADFGVX ШИФР</title>
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  
+  <style>
+    /* Фонт нэмэх */
+    @font-face {
+      font-family: "MyCustomFont";
+      src: url("path_to_your_font.ttf") format("truetype"); /* Таны өөрийн фонтын замыг оруулна уу */
+    }
+
+    /* Бүх фонтны хэмжээний тохиргоо */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: px; /* Энэ нь бүх текстийн хэмжээ */
+      background-color: #f4f4f4; /* Уламжлалт өнгө */
+      background-image: url('../zurag/blacka.jpg'); /* Таны сонгосон зураг */
+      background-size: cover; /* Зурагнууд дэлгэцийн хэмжээнд нийцсэн */
+      background-position: center; /* Зурагны байрлал */
+      background-repeat: no-repeat; /* Зураг давтагдахгүй */
+      margin: 0;
+      padding: 0;
+      min-height: 100vh; /* Баталгаажуулах дугуй баганууд сайтай байх */
+    }
+
+    /* Түлхүүр дөрвөлжин болон түлхүүр үгийг өөрийн фонттой тохируулах */
+    #enteredKeysquare, #enteredKeyword, #inputMessage, #result {
+      font-family: Arial, sans-serif;
+      font-size: 16px; /* Бүх текстийн хэмжээ нэг хэвээр */
+    }
+
+    /* Текстийн хэсэг */
+    textarea, input {
+      font-size: 16px; /* Бүх text болон input талбарын хэмжээ */
+    }
+
+    .information, .instructions {
+      font-size: 18px; /* Товчлуурын фонтын хэмжээ */
+    }
+
+    .information i, .instructions i {
+      font-size: 24px; /* Дүрсний хэмжээ */
+      margin-right: 10px; /* Дүрс ба текстийн хоорондын зай */
+    }
+
+    /* Шилжүүлж буй хэсэг */
+    footer p {
+      margin-right: 1cm; /* Текстийг 1 см баруун тийш шилжүүлнэ */
+    }
+
+    /* 6x6 код зохиогч товчлуурын стилийг нэмэх */
+    footer .footer-content a {
+      text-decoration: none; /* Тэмдэглэлийг авах */
+      padding: 10px 20px; /* Товчлуурын эргэн тойронд зай нэмэх */
+      background-color: #3498db; /* Товчлуурын өнгө */
+      color: white; /* Текстийн өнгө */
+      border: 2px solid #2980b9; /* Хүрээ нэмэх */
+      border-radius: 5px; /* Товчлуурын өнцгийг дугуйруулах */
+      transition: all 0.3s ease; /* Hover үед хурдасгалтай хувиргах */
+    }
+
+    footer .footer-content a:hover {
+      background-color: #2980b9; /* Hover үед өнгийг өөрчлөх */
+      border-color: #3498db; /* Hover үед хүрээний өнгийг өөрчлөх */
+    }
+  </style>
+</head>
+<body>
+  <!-- НАВИГАЦИЙН БАР -->
+  
+  <!-- ЦИФРЫН НЭР -->
+  <div class="title">
+    <h1 class="outsideScreen">ADFGVX ЦИФР</h1>
+  </div>
+  
+  <!-- МЭДЭЭЛЭЛ товчлуурыг өөрчилсөн -->
+  <button class="information" id="information"><i class="fas fa-info-circle"></i> МЭДЭЭЛЭЛ</button><br><br><br>
+  
+  <!-- ЗААВАР товчлуурыг өөрчилсөн -->
+  <button class="instructions" id="instructions"><i class="fas fa-book"></i> ЗААВАР</button>
+  
+  <div id="myinformation" class="information_content">
+
+    <!-- агуулга -->
+    <div><span class="close1">&times;</span></div>
+    <div class="information-content">
+      
+      <div class="information-body">
+        <p>1. Криптографид ADFGVX шифр нь Дэлхийн I дайны үед Германы армийн ашиглаж байсан талбайн шифр юм. Энэ нь хуучин ADFGX шифрийн өргөтгөл бөгөөд 1918 оны 3-р сард Полковник Фриц Небелийн зохион бүтээсэн.
+          <br><br>2. Энэ шифр нь өөрчлөгдсөн Полибиус дөрвөлжин болон ганц баганын шилжүүлэлтийг хослуулсан бутархай шилжүүлэлтийн шифр юм.
+          <br><br>3. шифр нь зөвхөн зургаан боломжит үсэгтэй үүнд: A, D, F, G, V болон X-ийг шифрлэх текстэд ашигладаг.
+          <br><br>4. ADFGVX шифрийн 'түлхүүр' нь "Полибиус" түлхүүр үг юм.
+          <br><br>5. "Полибиус" түлхүүр нь бүх үсэг болон 0 - 9 тоог багтаасан 6x6 дөрвөлжин юм. Түлхүүр үг нь ямар ч үг байж болно.
+        </p>
+      </div>
+    
+    </div>
+  
+  </div>
+  <div id="myinstructions" class="instructions_content">
+
+    <!-- агуулга -->
+    <div class="instructions-content">
+      <div class="instructions-header">
+        <span class="close2">&times;</span>
+      </div>
+      <div class="instructions-body">
+        <p>
+          <br>1. Оруулах хэсэгт шифрлэх текстээ оруулна уу
+          <br><br>2. Бүх үсэг болон 1-9 хүртэлх тоонуудыг агуулсан тоо үсэг холилдсон 36 тэмдэгтийн агуулсан түлхүүр дөрвөлжин оруулна уу.
+          <br><br> Жишээ нь: ph0qg64mea1yl2nofdxkr3cvs5zw7bj9uti8  
+          <br><br> Хэрэв та  6x6 түлхүүрийг автоматаар хийлэгхийг хүсвэл 6x6 код зохиогч хэсэг дээр товшиж гарсан кодыг "Түлхүүр дөрвөлжин оруулна уу" хэсэгт байршуул
+          <br><br>3. Мөн та дурын түлхүүр үгээ "Түлхүүр үг оруулна уу" хэсэгт бич Жнь: "CRYPTOGRAPHY" 
+          <br><br>4. Шифрлэх хэсэг дээр товшиж текстээ шифрлээрэй.
+          <br><br>5. Шифрлэсэн текстийг тайлахын тулд шифрлэгдсэн текстийг "Оруулах" хэсэгт оруулж тайлах товчин дээр товшино уу
+        </p>
+      </div>
+   
+    </div>
+  
+  </div>
+
+  <script>
+    var information = document.getElementById("myinformation");
+    var instructions = document.getElementById("myinstructions");
+
+    var informtion_button = document.getElementById("information");
+    var instructions_button = document.getElementById("instructions");
+
+    var span = document.getElementsByClassName("close1")[0];
+    var span1 = document.getElementsByClassName("close2")[0];
+    
+    informtion_button.onclick = function() {
+      if(information.style.display === "block")
+      {
+        information.style.display = "none";
+      }
+      else {
+        information.style.display = "block";
+      }
+    }
+    
+    instructions_button.onclick = function() {
+      if(instructions.style.display==="block")
+      {
+        instructions.style.display = "none";
+      }
+      else {
+        instructions.style.display = "block";
+      }
+    }
+
+    span.onclick = function() {
+      information.style.display = "none";
+    }
+    span1.onclick = function() {
+      instructions.style.display = "none";
+    }
+ 
+    window.onclick = function(event) {
+      if (event.target == information) {
+        information.style.display = "none";
+      }
+      if (event.target == instructions) {
+        instructions.style.display = "none";
+      }
+    }
+  </script>
+
+  <!-- МЭДЭЭЛЭЛ БА ДЕКОДЛОХ ТОВЧУУД -->
+  <div class="inOut">
+    <textarea name="input" rows="8" cols="80" id="inputMessage" placeholder="Оруулах"></textarea>
+    <span>
+      <button class="polyButton cipherMethod" id="cipherButtonPoly" onclick="cipherButtonFunction()">Шифрлэх</button>
+      <button class="polyButton decipherMethod" id="decipherButton" onclick="decipherButtonFunction()">Тайлах</button>
+      <br><br><br>
+      <div class="inOut">
+        <input type="text" id="enteredKeysquare" placeholder="Түлхүүр дөрвөлжин оруулна уу">
+      </div>
+      <div class="inOut">
+        <input type="text" id="enteredKeyword" placeholder="Түлхүүр үг оруулна уу">
+      </div><br>
+      <!-- 6x6 код зохиогч товчлуурыг доор байршуулсан -->
+      <div class="inOut">
+        <footer>
+          <div class="footer-content">
+            <p> <a href="6x6.html" target="_blank">6x6 код зохиогч</a></p>
+          </div>
+        </footer>
+      </div>
+    </span>
+
+    <textarea name="result" rows="8" cols="80" id="result" placeholder="Гаралт"></textarea>
+  </div>
+
+  <script type="text/javascript" src="../js/adfgvx.js"></script>
+  <script type="text/javascript" src="../js/main.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6x6 Код хийгч машин</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .key {
+            font-size: 20px;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .key:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>6x6 Код хийгч машин</h1>
+        <button onclick="generateKey()">Түлхүүр зохиох</button>
+        <div class="key" id="key"></div>
+    </div>
+
+    <script>
+        function generateKey() {
+            // Define the 36 characters for the key
+            const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            let shuffledCharacters = characters.split('').sort(() => Math.random() - 0.5).join('');
+            document.getElementById('key').textContent = shuffledCharacters;
+        }
+    </script>
+</body>
+</html>
