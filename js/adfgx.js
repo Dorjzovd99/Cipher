@@ -1,14 +1,13 @@
 function encrypt(plaintext, keysquare, keyword)
 { 
-    if(keysquare.length != 36){ alert("Түлхүүрийн квадрат нь 36 тэмдэгтийн урттай байх ёстой"); return; }
-    if(keyword.length <= 1){ alert("Түлхүүр үг дор хаяж 2 тэмдэгтээс бүрдэх ёстой"); return; }
+    if(keysquare.length != 25){ alert("25 тэмдэгт урттай байх ёстой, зөвхөн a-z үсгүүдийг (j үсэггүй) агуулсан"); return; }
+    if(keyword.length <= 1){ alert("Түлхүүр үг нь хамгийн багадаа 2 тэмдэгттэй байх ёстой"); return; }
     // first use polybius square to encipher plaintext
-    adfgvx = "ADFGVX";    ciphertext1 = "";
+    adfgvx = "ADFGX";    ciphertext1 = "";
     for(i=0; i<plaintext.length; i++){
         index = keysquare.indexOf(plaintext.charAt(i));
-        ciphertext1 += adfgvx.charAt(index/6) + adfgvx.charAt(index%6);
+        ciphertext1 += adfgvx.charAt(index/5) + adfgvx.charAt(index%5);
     }
-    // if the length of the cipher text is wrong, append some 'x's
     var colLength = ciphertext1.length / keyword.length;
     var chars = "abcdefghijklmnopqrstuvwxyz"; 
     ciphertext = ""; k=0;
@@ -27,13 +26,13 @@ function encrypt(plaintext, keysquare, keyword)
 function decrypt(ciphertext, keysquare, keyword)
 {
     klen = keyword.length;
-    var re = /[^adfgvx]/;
+    var re = /[^adfgx]/;
 
     // do some error checking
-    if(ciphertext.length < 1){ alert("Зөвхөн шифрлэлтийн утгыг оруулна уу (зөвхөн үсэг)"); return; }    
-    if(re.test(ciphertext)){alert("Шифрлэлт нь зөвхөн A, D, F, G, V эсвэл X үсэг агуулж байх ёстой"); return;};
+    if(ciphertext.length < 1){ alert("Зөвхөн шифрлэлтийн утгыг оруулна уу (зөвхөн үсэг))"); return; }    
+    if(re.test(ciphertext)){alert("Шифрлэлт нь зөвхөн A, D, F, G эсвэл X үсэг агуулж байх ёстой."); return;};
     if(ciphertext.length % 2 != 0){ alert("Шифрлэлтийн үсэгний тоо тэгш байх ёстой"); return; }  
-    if(keysquare.length != 36){ alert("36 тэмдэгт урттай байх ёстой"); return; }
+    if(keysquare.length != 25){ alert("25 тэмдэгт урттай байх ёстой"); return; }
     if(klen <= 1){ alert("Түлхүүр үг нь хамгийн багадаа 2 тэмдэгттэй байх ёстой"); return; }
     var numLongCols = ciphertext.length % klen;
     var cols = new Array(klen);
@@ -58,18 +57,18 @@ function decrypt(ciphertext, keysquare, keyword)
          plaintext1 += cols[i].charAt(j);
     }}
     // now undo the polybius square
-    adfgvx = "adfgvx"; plaintext = "";
+    adfgvx = "adfgx"; plaintext = "";
     for(i=0; i<plaintext1.length; i+=2){
-        keyindex = adfgvx.indexOf(plaintext1.charAt(i))*6 + adfgvx.indexOf(plaintext1.charAt(i+1));
+        keyindex = adfgvx.indexOf(plaintext1.charAt(i))*5 + adfgvx.indexOf(plaintext1.charAt(i+1));
         plaintext += keysquare.charAt(keyindex);
     }
     return plaintext;
 }
 
 function cipherButtonFunction(){
-    var enteredKeysquare = document.getElementById('enteredKeysquare').value.toLowerCase().replace(/[^a-z0-9]/g, "");
-    var enteredKeyword = document.getElementById('enteredKeyword').value.toLowerCase().replace(/[^a-z]/g, "");
-    var message = document.getElementById("inputMessage").value.toLowerCase().replace(/[^a-z0-9]/g, "");
+    var enteredKeysquare = document.getElementById('enteredKeysquare').value.toLowerCase().replace(/[^abcdefghiklmnopqrstuvwxyz]/g, ""); 
+    var enteredKeyword = document.getElementById('enteredKeyword').value.toLowerCase().replace(/[^a-z]/g, ""); 
+    var message = document.getElementById("inputMessage").value.toLowerCase().replace(/[^abcdefghiklmnopqrstuvwxyz]/g, "");  
   
     if(enteredKeysquare == "" || message == "" || enteredKeyword ==""){
       alert("Шифрийг тайлахын тулд түлхүүр болон мессежийг оруулна уу!!!");
@@ -82,9 +81,9 @@ function cipherButtonFunction(){
   
   // gets the message and key entered by user and deciphers it
   function decipherButtonFunction(){
-    var enteredKeysquare = document.getElementById('enteredKeysquare').value.toLowerCase().replace(/[^a-z0-9]/g, "");
-    var enteredKeyword = document.getElementById('enteredKeyword').value.toLowerCase().replace(/[^a-z]/g, "");
-    var message = document.getElementById("inputMessage").value.toLowerCase().replace(/[^a-z0-9]/g, "");
+    var enteredKeysquare = document.getElementById('enteredKeysquare').value.toLowerCase().replace(/[^abcdefghiklmnopqrstuvwxyz]/g, ""); 
+    var enteredKeyword = document.getElementById('enteredKeyword').value.toLowerCase().replace(/[^a-z]/g, ""); 
+    var message = document.getElementById("inputMessage").value.toLowerCase().replace(/[^abcdefghiklmnopqrstuvwxyz]/g, "");  
   
     if(enteredKeysquare == "" || message == "" || enteredKeyword ==""){
       alert("Шифрийг тайлахын тулд түлхүүр болон мессежийг оруулна уу!!!");
