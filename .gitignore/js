@@ -1,6 +1,2 @@
-# Нууц мэдээллийг хадгалдаг файлуудыг оруулна.
-.env
-node_modules/
-.vscode/
-.DS_Store
-secret_keys.txt
+KEYSQUARE=your_keysquare_value
+KEYWORD=your_keyword_value
