@@ -1,3 +1,8 @@
+require('dotenv').config();
+
+const keysquare = process.env.KEYSQUARE;
+const keyword = process.env.KEYWORD;
+
 function encrypt(plaintext, keysquare, keyword)
 { 
     if(keysquare.length != 36){ alert("Түлхүүрийн квадрат нь 36 тэмдэгтийн урттай байх ёстой"); return; }
